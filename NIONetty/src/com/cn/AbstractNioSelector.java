@@ -12,7 +12,7 @@ import com.cn.pool.NioSelectorRunnablePool;
 /**
  * 抽象selector线程类
  * 
- * @author -琴兽-
+ *  
  * 
  */
 public abstract class AbstractNioSelector implements Runnable {

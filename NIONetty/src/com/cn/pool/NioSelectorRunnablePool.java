@@ -6,7 +6,7 @@ import com.cn.NioServerBoss;
 import com.cn.NioServerWorker;
 /**
  * selector线程管理者
- * @author -琴兽-
+ *  
  *
  */
 public class NioSelectorRunnablePool {

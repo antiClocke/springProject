@@ -14,7 +14,7 @@ import com.cn.pool.NioSelectorRunnablePool;
 import com.cn.pool.Worker;
 /**
  * worker实现类
- * @author -琴兽-
+ *  
  *
  */
 public class NioServerWorker extends AbstractNioSelector implements Worker{

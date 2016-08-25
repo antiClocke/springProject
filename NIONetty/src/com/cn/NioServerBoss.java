@@ -15,7 +15,7 @@ import com.cn.pool.NioSelectorRunnablePool;
 import com.cn.pool.Worker;
 /**
  * boss实现类
- * @author -琴兽-
+ *  
  *
  */
 public class NioServerBoss extends AbstractNioSelector implements Boss{

@@ -3,7 +3,7 @@ package com.cn.pool;
 import java.nio.channels.SocketChannel;
 /**
  * worker接口
- * @author -琴兽-
+ *  
  *
  */
 public interface Worker {
