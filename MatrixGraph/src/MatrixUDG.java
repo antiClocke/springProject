@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class MatrixUDG {
 
@@ -411,7 +412,12 @@ public class MatrixUDG {
         // 初始化
         for (int i = 0; i < mVexs.length; i++) {
             flag[i] = false;          // 顶点i的最短路径还没获取到。
-            prev[i] = 0;              // 顶点i的前驱顶点为0。
+            if(mMatrix[vs][i]==INF){
+            	prev[i] = -1;              // 顶点i的前驱顶点为0。
+            }
+            else{
+            	prev[i] = vs;   
+            }
             dist[i] = mMatrix[vs][i];  // 顶点i的最短路径为"顶点vs"到"顶点i"的权。
         }
 
@@ -443,12 +449,32 @@ public class MatrixUDG {
                     prev[j] = k;
                 }
             }
+            
         }
-
+        
+        Stack stack=new Stack(); 
         // 打印dijkstra最短路径的结果
         System.out.printf("dijkstra(%c): \n", mVexs[vs]);
-        for (int i=0; i < mVexs.length; i++)
-            System.out.printf("  shortest(%c, %c)=%d\n", mVexs[vs], mVexs[i], dist[i]);
+        for (int i=0; i < mVexs.length; i++){
+        	 System.out.printf("shortest(%c, %c)=%d\n", mVexs[vs], mVexs[i], dist[i]);
+        	
+        	 int j=i;
+        	 stack.push( j );//end压进去
+             while(true){
+            	   stack.push(prev[j]);
+            	 if(prev[j]==vs){
+            		 break;
+            	 }
+            	 j=prev[j];
+             }
+             System.out.print("路径");
+             while(!stack.empty()){
+            	 System.out.print(stack.pop()+"->"); 
+             }
+             System.out.println(); 
+        }
+          
+        
     }
 
     // 边的结构体
@@ -493,5 +519,6 @@ public class MatrixUDG {
         int[] dist = new int[pG.mVexs.length];
         // dijkstra算法获取"第4个顶点"到其它各个顶点的最短距离
         pG.dijkstra(3, prev, dist);
+        
     }
 }
