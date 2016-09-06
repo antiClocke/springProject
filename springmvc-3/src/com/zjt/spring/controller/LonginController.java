@@ -34,6 +34,7 @@ public class LonginController {
 	@RequestMapping("/login") 
 	public String login(){
 		System.out.println("login");
+		System.out.println("login1");
 		longinService.sevicemethod();
 		return "success";
 	}
