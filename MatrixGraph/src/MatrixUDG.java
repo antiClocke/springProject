@@ -519,6 +519,8 @@ public class MatrixUDG {
         int[] dist = new int[pG.mVexs.length];
         // dijkstra算法获取"第4个顶点"到其它各个顶点的最短距离
         pG.dijkstra(3, prev, dist);
+        pG.BFS();
+        pG.prim(0);
         
     }
 }
